@@ -1,0 +1,83 @@
+
+.homeContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    color: #474444;
+    font-size: 10vw;
+    font-weight: 100;
+    font-family: 'Jomhuria', serif;
+}
+
+.options{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    color: #474444;
+    display: flex;
+    gap: 13vw;
+}
+.options > h3{
+    cursor: pointer;
+}
+
+.inputArea{
+    color:#474444;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 50vw;
+}
+
+.formArea{
+    gap: 3.5vh;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+input{
+    border-color: transparent;
+    border-radius: 10px 10px 0 0;
+    color: #474444;
+    font-family: 'Poppins', sans-serif;
+    background-color: #cfcfcf;
+    font-size: 1.3rem;
+    width: 27vw;
+    height: 32px;
+    padding: 20px;
+    outline-color: rgb(90, 90, 90);
+}
+::placeholder{
+    color: red;
+}
+
+button{
+    cursor: pointer;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #474444;
+    background-color: #A9BCFF;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1vh;
+    width: 230px;
+    height: 40px;
+}
+
