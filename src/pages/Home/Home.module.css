@@ -34,6 +34,7 @@
 }
 
 .inputArea{
+    margin-top: 1.5vh;
     color:#474444;
     font-family: 'Poppins', sans-serif;
     display: flex;
