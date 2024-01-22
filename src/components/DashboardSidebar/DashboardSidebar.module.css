@@ -1,0 +1,44 @@
+.sidebar{
+    width: 17vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    box-shadow:.1px 0px 10px 0px black;
+    color: #474444;
+}
+
+.header{
+    font-family: 'Jomhuria', serif;
+    font-weight: 100;
+    padding: 10px;
+    font-size: 6vw;
+}
+
+.options{
+    cursor: pointer;
+    margin-top: -30px;
+    display: flex;
+    flex-flow: column;
+    height: 25vh;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+.options > h2:hover{
+    font-weight: 900;
+    color: red;
+}
+
+.footer{
+    cursor: pointer;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 -4px 3px -3px #0000005f;
+    font-size: 1.8vw;
+}
+.footer:hover{
+    color: violet;
+}

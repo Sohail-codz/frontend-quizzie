@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../Home/Home.module.css';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
+    const navigate = useNavigate();
     const [isSignUp, setIsSignUp] = useState(true);
     const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
     const [formData, setFormData] = useState({
@@ -53,6 +57,16 @@ function Home() {
             console.log(response.data);
             if (isSignUp) {
                 setIsSignUpSuccess(true);
+                toast.success('Sign Up Successful!', { position:'top-center', autoClose: 2000 });
+            }
+            if (!isSignUp) {
+                const { token, } = response.data;
+                localStorage.setItem('jwtToken', token);  
+                setIsSignUpSuccess(true);
+                toast.success('Login Successful!', { position:'top-center', autoClose: 2000 });
+                setTimeout(() => {
+                    navigate('/dashboard');
+                  }, 3000);
             }
         } catch (error) {
             console.error(error.response.data);
@@ -66,6 +80,7 @@ function Home() {
                     setErrors({ email: error.response.data.error });
                 }
             }
+            console.log(error)
         }
     };
 
@@ -95,6 +110,7 @@ function Home() {
                 }));
             }
         } catch (error) {
+            console.log(error)
             console.error(error.response.data);
             setFormData((prevFormData) => ({
                 ...prevFormData,
@@ -117,18 +133,26 @@ function Home() {
         }
     }, [isSignUpSuccess]);
 
+
+    useEffect(()=>{
+        const expirationTime = 60*60*1000; 
+            setTimeout(() => {
+                localStorage.removeItem('jwtToken');
+            }, expirationTime);
+    },[])
+
     return (
         <div className={styles.homeContainer}>
             <div className={styles.container}>
                 <h1 className={styles.header}>QUIZZIE</h1>
                 <div className={styles.options}>
-                    <h3
+                    <h3 className={styles.signup}
                         onClick={() => handleClick(true)}
-                        style={{ color: isSignUp ? '#A9BCFF' : '#474444' }}
+                        style={{ color: isSignUp ? '#A9BCFF' : '#474444'}}
                     >
                         Sign up
                     </h3>
-                    <h3
+                    <h3 className={styles.login}
                         onClick={() => handleClick(false)}
                         style={{ color: !isSignUp ? '#A9BCFF' : '#474444' }}
                     >
@@ -210,10 +234,11 @@ function Home() {
                         )} <p style={{color:'red'}}>{errors.confirmPassword || ''}</p>
                     </form>
                 </div>
-                <button type='submit' form='myForm'>
+                <button className={styles.LnSbutton} type='submit' form='myForm'>
                     {isSignUp ? 'Sign Up' : 'Log In'}
                 </button>
             </div>
+            <ToastContainer/>
         </div>
     );
 }

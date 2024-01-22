@@ -32,6 +32,14 @@
 .options > h3{
     cursor: pointer;
 }
+.options .signup:hover{
+    transform: translateY(-2px);
+    transition: all 100ms;
+}
+.options .login:hover{
+    transform: translateY(-2px);
+    transition: all 100ms;
+}
 
 .inputArea{
     margin-top: 1.5vh;
@@ -69,7 +77,7 @@ input{
     color: red;
 }
 
-button{
+.LnSbutton{
     cursor: pointer;
     border-style: none;
     border-radius: 5px;
@@ -80,5 +88,10 @@ button{
     margin-top: 1vh;
     width: 230px;
     height: 40px;
+}
+.LnSbutton:hover{
+    border: 3px solid rgba(0, 0, 0, 0.311);
+    transform: translateY(-.5px);
+    transition: all 100ms;
 }
 
