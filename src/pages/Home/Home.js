@@ -131,15 +131,20 @@ function Home() {
                 confirmPassword: '',
             });
         }
-    }, [isSignUpSuccess]);
-
-
-    useEffect(()=>{
         const expirationTime = 60*60*1000; 
             setTimeout(() => {
                 localStorage.removeItem('jwtToken');
             }, expirationTime);
-    },[])
+    }, [isSignUpSuccess]);
+
+
+    // useEffect(()=>{
+    //     const expirationTime = 2000; 
+    //         setTimeout(() => {
+    //             console.log('removing token');
+    //             localStorage.removeItem('jwtToken');
+    //         }, expirationTime);
+    // },[])
 
     return (
         <div className={styles.homeContainer}>
@@ -167,6 +172,7 @@ function Home() {
                                     Name
                                 </label>
                                 <input
+                                    className={styles.inputStyles}
                                     type='text'
                                     id='name'
                                     name='name'
@@ -184,6 +190,7 @@ function Home() {
                                 Email
                             </label>
                             <input
+                                className={styles.inputStyles}
                                 type='email'
                                 id='email'
                                 name='email'
@@ -200,6 +207,7 @@ function Home() {
                                 Password
                             </label>
                             <input
+                                className={styles.inputStyles}
                                 type='password'
                                 id='password'
                                 name='password'
@@ -217,6 +225,7 @@ function Home() {
                                     Confirm Password
                                 </label>
                                 <input
+                                    className={styles.inputStyles}
                                     type='password'
                                     id='confirm-password'
                                     name='confirmPassword'

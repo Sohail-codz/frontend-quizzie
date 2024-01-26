@@ -1,0 +1,64 @@
+.mainContainer{
+    font-family: 'Poppins', sans-serif;
+    width: 83vw;
+    padding: 3rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.heading{
+    font-size: 55px;
+    font-weight: 900;
+    color: blue;
+}
+
+.tableContainer{
+    display: grid;
+    width: 60vw;
+    overflow-y: scroll;
+    max-height: 62vh;
+    margin-top: 10vh;
+    text-align: center;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+.tableContainer::-webkit-scrollbar{
+    width: 5px;
+}
+.tableContainer::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+
+.table{
+    border-collapse: collapse;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+}
+.tableHeading{
+    background-color: #5076FF;
+    color: white;
+    height: 7vh;
+}
+
+.quizContents{
+    height: 7vh;
+    margin: 0;
+    font-weight: 600;
+}
+.quizContents > td > img{
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even){
+    background-color: #b3c4ff ;
+}
+tbody tr:nth-child(odd){
+    background-color: #EDEDED ;
+}
+
+
+
